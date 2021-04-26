@@ -1,0 +1,88 @@
+{% extends 'dash/base.html' %}
+
+{% block article %}
+    {% if not user.etudiant %}
+      <div class="alert alert-danger message2" role="alert" style="margin: 0;">Veillez <a href="{% url 'edite_profil' %}">completer votre Profil</a> afin de profiter de votre compte AAEE.
+      </div>
+    {% endif %}
+
+
+
+	{% if user.etudiant %}
+
+		{% for x in pub %}
+
+			{% if x.activer %}
+				<div class="alert alert-success mt-2 pt-3 pb-1 pub">
+					<h6>{{x.text|safe}}</h6>
+				</div>
+			{% endif %}
+
+		{% endfor %}
+		<h2 class="mt-4 mb-3">Dernières news<hr></h2>
+
+		<div class="container-fluid" style="margin-bottom: 80px;">
+			<div class="row">
+		
+		{% if ann %}
+
+		{% for x in ann %}
+              <div class="col-md-4 mt-3 mb-3" style="border: 1px solid transparent; padding-top: 0; padding-bottom: 5px; padding-left:">
+
+                <div>
+                    <img src="{{x.images.url}}" alt="..." style="width: 100%; overflow: hidden;background-size: cover;background-repeat: no-repeat;background-position: center center;height: 200px;position: relative;display: block; margin: 0;">
+                    <div>
+
+                      <h5 style="margin-top: 5px;"><a href="{% url 'detail_annonce' x.id %}" style="text-decoration: none; color: black;">{{x.titre}}</a></h5>
+                      <hr>
+                      <p align="justify" class="mb-2">{{x.text|truncatewords:14|safe}}</p>
+
+                      <hr>
+
+                      <a href="{% url 'detail_annonce' x.id %}" class="btn-primary mt-5" style="padding: 10px; border-radius: 5px; background-color: #199EB8;">Voir plus</a>
+
+                      <small style="color: #000; margin: 1px;"> {{x.date_pub}}</small>
+                    </div>
+                </div>
+              </div>
+
+		{% endfor %}
+
+			</div>
+
+			<div class="row mt-5">
+				<div class="col-md-12 text-right">
+					<hr>
+					<a href="{% url 'annonce' %}" class="btn-dark p-2" style="border-radius: 5px;">Plus de news</a>
+					<hr>
+				</div>
+			</div>
+		</div>
+
+		{% else %}
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 offset-md-1 pas-pro" style="padding: 15%; border: 5px solid #eee; border-radius: 20px;">
+						<h5 style="color: #333; text-align: center;">Pas de news !</h5>
+					</div>
+				</div>
+			</div>
+
+		{% endif %}
+
+
+
+	{% else %}
+
+		<div class="container mt-4">
+			<div class="row">
+				<div class="col-md-10 offset-md-1 pas-pro" style="padding: 20%; border: 5px solid #eee; border-radius: 20px;">
+					<h5 style="color: #333; text-align: center;">Profil non connu !</h5>
+				</div>
+			</div>
+		</div>
+
+	{% endif %}
+
+{% endblock %}

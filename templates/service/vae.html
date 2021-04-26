@@ -1,0 +1,145 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+
+{% block title %}VAE{% endblock %}
+
+{% block content %}
+  {% include 'Base/header.html' %}
+
+ <div class="container-fluid mb-5" style="padding: 5%; background-image: url({% static '' %}img/eces_arr22.jpg); background-size: 100% auto; color: white;">
+      <h1 align="center"><span class="an"></span></h1>
+  </div>
+
+
+    <div class="container">
+      <h2 style="margin-bottom: 0;">VAE qu’est-ce que c’est ?<hr></h2>
+        <div class="row">
+          
+            <div class="col-md-12">
+                <p align="justify">Dans tous les pays du monde, on trouve des personnes qui ont des expériences professionnelles avérées ou connaissances professionnelle appréciables, mais n’ont pas de diplômes qui correspondent à ces acquis. En effet, une fois dans « l’engrainage » de l’emploi beaucoup des gens n’ont plus eu ni le temps ni l’opportunité de repartir à l’école ou à l’université pour des études classiques et préparer d’autres diplômes.</p>
+
+            <p align="justify">Il existe pourtant dans plusieurs pays, des mécanismes qui permettent d’établir des équivalences entre l’expérience professionnelle acquise sur le terrain de l’emploi et des diplômes délivrés par des écoles ou des universités.</p>
+
+            <p align="justify">Le CACSUP (une ONG africaine de de l’éducation) propose depuis 2014, un programme de <b>validation d’acquis</b> d’expérience qu’il propose particulièrement à ses anciens étudiants dans le cadre d’un programme spécial en cette période difficile liée à la pandémie de coronas virus.</p>
+            <p align="justify"><strong>Vous êtes un anciens étudiant de l’ECES, vous avez, par ce programme d’urgence, la possibilité de préparés vos autres diplômes.</strong></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+      <h2 style="margin-bottom: 0;">Filières de formation concernées<hr></h2>
+        <div class="row">
+        <div class="col-md-4">
+          <ul>
+            <li>Comptabilité, Gestion,</li>
+            <li>Audit et contrôle de gestion,</li>
+            <li>Banque, Finances et Assurances</li>
+            <li>Management Ressources Humaines</li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <ul>
+            <li>Maintenance Industrielle</li>
+            <li>Informatique (systèmes, réseaux ou base de données)</li>
+            <li>Télécommunications</li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <ul>
+            <li>Qualité et Environnement</li>
+            <li>Transport et Logistique</li>
+            <li>Secrétariat ou Administration</li>
+            <li>Gestion des projets</li>
+            <li>Commerce Marketing</li>
+          </ul>
+        </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 style="margin-bottom: 0;">Parcours préparés :<hr></h2>
+          <ul>
+            <li>LP (Licence professionnelle) (BAC+3)</li>
+            <li>MP (Master Professionnel) (BAC+5)</li>
+            <li>MR Master Recherche (BAC+5)</li>
+            <li>Préparation au projet de thèse</li>
+          </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h2 style="margin-bottom: 0;">Ecoles partenaires du programme :<hr></h2>
+            <ul>
+              <li>Ecole Communautaire de l’Enseignement <br>Supérieur (ECES-Dakar)</li>
+              <li>Ecole Communautaire de l’Enseignement<br> Supérieur (ECES-Brazzaville)</li>
+            </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-3">
+      <hr>
+        <div class="row mt-2 mb-2">
+            <div class="col-md-12">
+                <img src="{% static '' %}img/table.png" style="width: 100%;">
+            </div>
+        </div>
+        <hr>
+    </div>
+
+
+    <div class="container mt-4 mb-5">
+        <div class="row">
+          <div class="col-md-6">
+                <h4>Différentes sessions</h4>
+          <ul>
+                    <li>Mais 2021</li>
+              <li>Juillet 2021</li>
+              <li>
+                  Type de cours
+                  <ul>
+                      <li>En ligne</li>
+                      <li>Boot Camp</li>
+                    </ul>
+              </li>
+          </ul>
+
+          <h4>Méthode de formation et d’évaluation</h4>
+            <ul>
+              <li>Cours</li>
+              <li>Projet</li>
+              <li>Mémoire</li>
+              <li>soutenance</li>
+            </ul>
+
+          <h4>Comment se déroule une démarche de VAE ?</h4>
+          <ol>
+            <li>S’inscrire en ligne (formulaire)</li>
+              <li>Fournir le dossier et être accepté</li>
+              <li>Payer les frais</li>
+              <li>Faire les modules programmés</li>
+              <li>Faire les évaluations</li>
+              <li>Présenter/soutenir les projets/mémoires éventuels.</li>
+            </ol>
+            </div>
+
+            <div class="col-md-6" style="padding-top: 15px;">
+              <img src="{% static '' %}img/VAE.JPG" style="width: 100%;">
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-12" align="center">
+            <p style="display: inline-block; margin-bottom: 15px;">Cliquez sur le bouton pour vous inscrire au programme VAE de l'ECES</p> <a href="https://ecesonline.org/inscriptions" style="background-color: #199EB8; padding: 10px; color: white; border-radius: 10px; margin-left: 15px;" class="mt-5" target="_blank"><strong>Inscription/ VAE</strong></a>
+
+          </div>
+        </div>
+    </div>
+
+
+{% endblock %}

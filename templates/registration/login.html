@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AAEE | Connexion</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="author" content="Codedthemes" />
+    <!-- Favicon icon -->
+    <link rel="icon" href="{% static 'img/20210106_194112.png' %}" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <!-- waves.css -->
+    <link rel="stylesheet" href="{% static 'pages/waves/css/waves.min.css' %}" type="text/css" media="all">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/bootstrap/css/bootstrap.min.css' %}">
+    <!-- waves.css -->
+    <link rel="stylesheet" href="{% static 'pages/waves/css/waves.min.css' %}" type="text/css" media="all">
+    <!-- themify icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'icon/themify-icons/themify-icons.css' %}">
+    <!-- font-awesome-n -->
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/font-awesome-n.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/font-awesome.min.css' %}">
+    <!-- scrollbar.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/jquery.mCustomScrollbar.css' %}">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/style.css' %}">
+
+    <style type="text/css">
+        @media(max-width: 992px){
+            #password_ned{
+                display: none;
+            }
+
+            #log{
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-image: url({% static '' %}img/eces_arr22.jpg);">   
+
+<!--     {% if form.errors %}
+      <div class="alert alert-danger" role="alert" style="margin: 0;">
+      {{ form.errors }}
+      </div>
+    {% endif %}
+ -->
+    <section class="login-block" >
+        <!-- Container-fluid starts -->
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6" id="log">
+                    <!-- Authentication card start -->
+
+                        <form class="md-float-material form-material" method="post" style="margin-top: 50px; border-radius: 1105px;">
+                          {% csrf_token %}
+
+                            <div class="text-center">
+                                <a href="/"><img src="{% static 'img/AAEE.jpg' %}" alt="logo.png" style="width: 100px; border-radius: 100px;"></a>
+                            </div>
+<!--                             <div class="row m-b-20">
+                                    <div class="col-md-12">
+                                            <h4 class="text-center text-light mt-3">Connexion à votre compte AAEE</h4>
+                                        </div>
+                                    </div> -->
+                            
+
+                            <div class="auth-box card">
+                                <div class="card-block">
+
+                                    
+                                    <p style="font-size: 16px;">Si vous n'avez pas un compte, <a href="{% url 'register' %}" style="color: #55f; font-size: 16px;"><strong>cliquez ici pour vous inscrire.</strong></a></p>
+                                    <br>
+
+                                    <div class="form-group form-primary">
+                                        <input type="text" class="form-control" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required>
+                                        <span class="form-bar"></span>
+                                        <label class="float-label">Nom d'utilisateeur</label>
+                                    </div>
+                                    <div class="form-group form-primary">
+                                        <input type="password" name="password" autocomplete="current-password" required class="form-control">
+                                        <span class="form-bar"></span>
+                                        <label class="float-label">Mot de Passe</label>
+                                    </div>
+
+                                    
+
+                                    <p><a href="{% url 'reset_password' %}">Mot de passe oublié?</a></p>
+
+                                    <div class="row m-t-30">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20" style="border-radius: 15px;">Se connecter à votre compte AAEE</button>
+                                        </div>
+                                    </div>
+                                    <hr/>
+
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <p class="text-inverse text-left m-b-0">&copy;copyright AAEE 2021</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- end of form -->
+                </div>
+                <!-- end of col-sm-12 -->
+
+                <div class="col-md-5 bg-light" style="margin-top: 125px; padding: auto; border-radius: 5px;" id="password_ned">
+                    {% if form.errors %}
+                        <img src="{% static 'img/error.png' %}" style="width: 50%; margin-left: 25%;">
+                        <hr>
+                    <p align="justify" style="text-align: center; padding-left: 10%; color: red;">{{form.errors}}</p>
+                    <hr>
+                    {% else %}
+                        <img src="{% static 'img/cle.png' %}" style="width: 50%; margin-left: 20%; margin-top: 10%;">
+                    
+                        <h4 align="center" class="mt-5"><hr>Connectez-vous à votre compte AAEE</h4>
+                        <hr>
+
+                        <p style="text-align: left;"><a href="/">Retournez à la page d'Accueil</a></p>
+                    {% endif %}    
+                </div>
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+
+    <script type="text/javascript" src="{% static 'pages/js/jquery/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'pages/js/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'pages/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="{% static 'pages/js/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- waves js -->
+    <script src="{% static 'pages/waves/js/waves.min.js' %}"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="{% static 'pages/js/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+
+    <!-- slimscroll js -->
+    <script src="{% static 'pages/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+
+    <!-- menu js -->
+    <script src="{% static 'pages/js/pcoded.min.js' %}"></script>
+    <script src="{% static 'pages/js/vertical/vertical-layout.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'pages/js/script.js' %}"></script>
+</body>
+</html>

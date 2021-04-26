@@ -1,0 +1,30 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block title %}Erreur{% endblock %}
+
+{% block content %}
+
+	{% include 'Base/header.html' %}
+
+	<div class="container-fluid" style="padding: 5%; background-image: url({% static '' %}img/eces_arr22.jpg); background-size: 100% auto; color: white;">
+    	<h1 align="center">Erreur 404</h1>
+	</div>
+
+	<section class="portfolio" id="portfolio" style="padding-top: 0; padding-bottom: 70px;">
+
+    <div class="portfolio-grid" style="margin-top: 10px;">
+      <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+          <h2 align="center" style="padding: 20px;">Oups!! Page not found (404) <small style="color: #1ce;"><a href="/">Back to Home page</a></small></h2>
+          <img src="{% static '' %}img/AAEE.jpg" style="width: 100%;">
+        	
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,173 @@
+{% extends 'dash/base.html' %}
+{% load static %}
+
+{% block title %}{{user}} Profil{% endblock %}
+
+{% block content %}
+
+	{% include 'Base/header.html' %}
+
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-danger" role="alert">
+  {{ message }}
+  </div>
+  {% endfor %}
+  {% endif %}
+
+
+  		{% block article %}
+
+  	<div class="container-fluid ned_tete" style="padding: 5%; background-image: url({% static '' %}img/eces_arr22.jpg); background-size: 100% auto; color: white;">
+    	<h1 align="center"><small>Profil ({{user}})</small></h1>
+	</div>	
+
+  	<section id="contact" class="pt-4">
+    <div class="container-fluid">
+
+      <div class="row justify-content-center">
+
+        <div class="col-md-12">
+          <div class="form">
+
+
+            <form method="POST" role="form" enctype="multipart/form-data">
+            	{% csrf_token %}
+
+
+            	<h2 style="margin-bottom: 20px;">Completez votre Profil <hr></h2>
+
+              <div class="form-group">
+              	<label><small>*Choisissez une photo de profil</small></label>
+                <input type="file" name="profil" required id="id_profil" class="form-control"  />
+                <div class="validation"></div>
+              </div>
+
+
+              <div class="form-group" id="#form">
+                <input  class="form-control" type="text" name="nom" required  placeholder="Nom de famille"/>
+                <div class="validation"></div>
+              </div>
+
+
+              <div class="form-group">
+                <input class="form-control" type="text" name="prenom" required placeholder="Prénoms" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <select name="promotion" required>
+                	<option style="color: rgba(0,0,0,0.2);">Votre promotion</option>
+                	
+			    	<option value="2003">Promotion - 2003</option>
+			    	<option value="2004">Promotion - 2004</option>
+			    	<option value="2005">Promotion - 2005</option>
+			    	<option value="2006">Promotion - 2006</option>
+			    	<option value="2007">Promotion - 2007</option>
+			    	<option value="2008">Promotion - 2008</option>
+			    	<option value="2009">Promotion - 2009</option>
+			    	<option value="2010">Promotion - 2010</option>
+			    	<option value="2011">Promotion - 2011</option>
+			    	<option value="2012">Promotion - 2012</option>
+			    	<option value="2013">Promotion - 2013</option>
+			    	<option value="2014">Promotion - 2014</option>
+			    	<option value="2015">Promotion - 2015</option>
+			    	<option value="2016">Promotion - 2016</option>
+			    	<option value="2017">Promotion - 2017</option>
+			    	<option value="2018">Promotion - 2018</option>
+			    	<option value="2019">Promotion - 2019</option>
+			    	<option value="2020">Promotion - 2020</option>
+			    	<option value="2021">Promotion - 2021</option>
+                </select>
+                <div class="validation"></div>
+              </div>
+
+
+              <div class="form-group">
+                <select name="option" required id="id_option" required>
+                  <option style="color: rgba(0,0,0,0.2);">Option</option>
+
+				  <option value="Langues et Affaires">Langues et Affaires</option>
+
+				  <option value="Management QSE">Management QSE</option>
+
+				  <option value="Banque, Finances et Assurances">Banque, Finances et Assurances</option>
+
+				  <option value="Comptabilité et Gestion d&#x27;Entreprise">Comptabilité et Gestion d&#x27;Entreprise</option>
+
+				  <option value="Transport et Logistique">Transport et Logistique</option>
+
+				  <option value="Maintenance Industrielle">Maintenance Industrielle</option>
+
+				  <option value="Electricité Industrielle">Electricité Industrielle</option>
+
+				  <option value="Génie Informatique">Génie Informatique</option>
+
+				  <option value="Ressources Humaines">Ressources Humaines</option>
+
+				  <option value="Secretariat de Direction">Secretariat de Direction</option>
+
+				  <option value="Communication et Multi-média">Communication et Multi-média</option>
+
+				  <option value="Traduction et Interpretariat">Traduction et Interpretariat</option>
+
+				  <option value="Administration des Affaires">Administration des Affaires</option>
+
+				  <option value="Informatique et Technologies Numériques">Informatique et Technologies Numériques</option>
+
+				  <option value="Electromécanique">Electromécanique</option>
+
+				  <option value="Chaine de la logistique">Chaine de la logistique</option>
+
+				  <option value="Commerce international et Marketing">Commerce international et Marketing</option>
+			    </select>
+			</div>
+
+
+			<div class="form-group">
+                <select name="pays_residence" id="id_pays_residence" required>
+                  <option value="" style="color: rgba(0,0,0,0.2);">Pays de residence</option>
+                  <option value="AF">Afghanistan</option>
+
+                  {% include 'Etudiants/pays.html' %}
+
+                </select>
+            </div>
+
+
+              <div class="form-group">
+                <input class="form-control" type="text" name="tel" maxlength="25" required id="id_profil" placeholder="Téléphone"/>
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="email" name="email" maxlength="254" required id="id_profil" placeholder="E-mail" />
+                <div class="validation"></div>
+              </div>
+
+
+              <div class="form-group">
+                <input class="form-control" type="text" name="societe" maxlength="150" id="id_profil" required placeholder="Societé/Organisation"/>
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="text" name="secteur" maxlength="150" id="id_profil" placeholder="Secteur d&#x27;expertise dans la Societé/Organisation" />
+                <div class="validation"></div>
+              </div>
+
+
+              <div class="text-center"><button type="submit">Enregistrer</button></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  		
+{% endblock %}
+
+
+{% endblock %}

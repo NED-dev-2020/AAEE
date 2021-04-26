@@ -1,0 +1,60 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+
+	{% include 'Base/header.html' %}
+
+	<div class="container-fluid" style="padding: 5%; background-image: url({% static '' %}img/eces_arr22.jpg); background-size: 100% auto; color: white;">
+    	<h1 align="center">Inscription</h1>
+	</div>	
+
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-danger" role="alert">
+  {{ message }}
+  </div>
+  {% endfor %}
+  {% endif %}
+
+
+  <div class="container" style="padding-top: 60px; padding-bottom: 100px;">
+
+  	<div class="row">
+  		<div class="col-md-8 offset-md-2">
+  			<form action="register" method="POST" style="border: ">
+          <p>Cliquez <a href="{% url 'profil_etudiant' %}">ici</a> pour se <a href="{% url 'profil_etudiant' %}">connecter</a> si vous avez déja un compte AAEE, sinon creer votre compte en remplissant le formulaire ci-dessous.</p>
+          <hr>
+  			{% csrf_token %}
+
+			  <div class="mb-3">
+			    <label for="exampleInputEmail1" class="form-label">Nom d'utilisateur</label>
+			    <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="votre nom d'utilisateur">
+			  </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">E-mail</label>
+          <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="votre email">
+        </div>
+
+			  <div class="mb-3">
+			    <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+			    <input type="password" name="password1" class="form-control" id="exampleInputPassword1" placeholder="votre nouveau mot de passe">
+			  </div>
+
+		    <div class="mb-3">
+			    <label for="exampleInputPassword1" class="form-label">Confirmez le mot de passe</label>
+			    <input type="password" name="password2" class="form-control" id="exampleInputPassword1" placeholder="Confirmez le nouveau mot de passe">
+		  	</div>
+  		
+  		<input type="submit" class="btn" style="padding: 10px 20px; border-radius: 5px; background-color: #199EB8;" value="Creer un compte AAEE" name="bouton">
+</form>
+  		</div>
+  	</div>
+  	  
+  </div>
+
+
+{% endblock %}

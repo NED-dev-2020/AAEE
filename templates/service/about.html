@@ -1,0 +1,90 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+
+{% block title %} A propos{% endblock %}
+
+{% block content %}
+
+	{% include 'Base/header.html' %}
+
+<!-- 	<div class="container-fluid" style="padding: 5%; background-image: url({% static '' %}img/eces_arr22.jpg); background-size: 100% auto; color: white;">
+    	<h1 align="center">À propos</h1>
+	</div> -->
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6 mt-5">
+				<img src="{% static '' %}img/AAEE.jpg" alt="" style="width: 100%;">
+			</div>
+
+			<div class="col-md-6 mt-5">
+				<h3>A PROPOS DE AAEE</h3>
+				<hr>
+				<p align="justify">L’Association des Anciens Étudiants de l’ECES (AAEE), est un recoupement associatif qui met ensemble les anciens étudiants de l’Ecole Communautaire de l’Enseignement Supérieur (ECES), depuis sa création en 2001 jusqu’à ce jour. Dans un souci d’unité, de collégialité et de cohérence, mais aussi d’esprit d’équipe, d’échanges et de complémentarité, l’AAEE voudrait mener des réflexions pour des actions qui visent à partager des informations utiles entre ses membres, aider les étudiants encore à l’école et accompagner l’école dans ses projets de développement de l’école.</p>
+			</div>
+
+		</div>
+		<hr>
+		<div class="row">
+
+			<div class="col-md-6 mt-5">
+				<img src="{% static '' %}img/eces.jpg" alt="" style="width: 100%;">
+			</div>
+
+			<div class="col-md-6 mt-5">
+				<h3>ECES : HISTORIQUE, OBJECTIFS ET PARCOURS DE NOTRE ECOLE</h3>
+				<hr>
+				<p align="justify">L’Ecole Communautaire de l’Enseignement Supérieur (ECES) est née en 2001, de la volonté du CACSUP (Centre Africain de Complémentarité Scolaire, Universitaire et de Promotion), une ONG de l’éducation et des TIC, enregistrée au Congo en 1998 comme association de la loi de 1901.</p>
+
+				<p align="justify">Le contexte de la création de l’ECES était celui de la sortie de la guerre fratricide qui avait endeuillée le Congo en 1997 spécialement. Une guerre qui a freiné l’élan de son développement, fragilisé sa jeunesse, et endommagé l’ensemble du tissu social du pays.</p>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-12 mt-2">
+				<p align="justify">Aujourd’hui, l’objectif de l’ECES est resté le même : former les jeunes africains au niveau de l’enseignement supérieur sur des filières ouvertes à l’emploi, soutenu par ses programmes académiques régulièrement adaptés aux besoins des entreprises et de la société, tout en intégrant la culture de l’entreprenariat, et l’appropriation des technologies numériques, base de la transformation digitale en marche dans le monde.</p>
+
+				<p align="justify">Avec une moyenne de 160 diplômés par année, depuis 2003, l’ECES a déjà sorti 18 promotions pour un total de 4.127 diplômés que l’on retrouve aujourd’hui sur le marché de l’emploi au Congo et dans d’autres pays à travers le monde, dans les institutions internationales, le privé, et dans la fonction publique. En 2007, l’ECES a lancé son programme des cours en ligne : <a href="https://www.ecesonline.org" target="_blank">Ecesonline</a>. Depuis 2020 l’ECES est agrée comme établissement de l’enseignement supérieur au Sénégal.</p>
+
+				<p align="justify">L’ECES a été établie successivement sur plusieurs sites comme montré ci-dessous :</p>
+
+				<div class="row">
+					<div class="col-md-6">
+						<h3>Historique des sites occupés par l’ECES</h3>
+						<br>
+						<h3>A Brazzaville :</h3>
+
+						<p>
+							<li>2001-2002 : A au lycée Technique 1er mai</li>
+							<li>2003-2012 : Ecole Actuelle, deriere les pompes funèbres municipales</li>
+							<li>Depuis 2012 Deriere le PSP plateau de 15 ans </li>
+						</p>
+						
+
+						<h3>A pointe noire :</h3>
+						<p>
+						<li>2001 - 2016: Institut Tomas Sankara</li>
+						<li>Depuis 2016 : CEFA, quartier Saint Pierre</li>
+						</p>
+
+						<h3>A Dolisie :</h3>
+						<p>
+						<li>2003-2004 : Salangolo</li>
+						<li>2016-2018 : Salangolo</li>
+						</p>
+					</div>
+
+					<div class="col-md-6 mt-2 bg-light mb-5 p-2">
+						<img src="{% static '' %}img/ar.png" style="width: 70%; margin-left: 15%;">
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}

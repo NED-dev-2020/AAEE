@@ -1,0 +1,43 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block title %}Actualite{% endblock %}
+{% block content %}
+	{% include 'Base/header.html' %}
+
+	<div class="container-fluid" style="padding: 5%; background-image: url({% static '' %}img/actu.JPG); background-size: 100% auto; color: white;">
+    	<h1 align="center">Actualités</h1>
+	</div>
+
+	<div class="container mt-4 mb-4">
+		<div class="row">
+			
+			{% for element in cle_actu %}
+              <div class="col-md-4 mt-3 mb-3" style="border: 1px solid transparent; padding-top: 0; padding-bottom: 5px; padding-left:">
+                
+                <div>
+                    <img src="{{element.images.url}}" alt="..." style="width: 100%; overflow: hidden;background-size: cover;background-repeat: no-repeat;background-position: center center;height: 200px;position: relative;display: block; margin: 0;">
+                    <div>
+                      
+                      <h5 style="margin-top: 5px;"><a href="{% url 'detail_actualite' element.id %}" style="text-decoration: none; color: black;">{{element.titre}}</a></h5>
+                      <hr>
+                      <p align="justify" class="mb-3">{{element.description|truncatewords:14|safe}}</p>
+                      <hr>
+                      <a href="{% url 'detail_actualite' element.id %}" class="btn-primary" style="padding: 10px; border-radius: 5px; background: #199EB8;">Voir plus</a>
+                      <small style="color: #000; margin: 1px;"> {{element.date_pub}}</small>
+                    </div>
+                </div>
+                <hr>
+              </div>
+      {% empty %}
+
+        <div class="col-md-12">
+          <h5 style="padding: 15%; text-align: center; border: 2px solid #fff; border-radius: 30px;">Pas d'actualité pour l'instant !</h5>
+        </div>
+
+			{% endfor %}
+
+		</div>
+	</div>
+
+
+{% endblock %}

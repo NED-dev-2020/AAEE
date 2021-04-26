@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>AAEE | {% block title %}{% endblock %}</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <link href="{% static '' %}img/AAEE.jpg" rel="icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+
+  <link href="{% static '' %}lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="{% static '' %}lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <link href="{% static '' %}css/style.css" rel="stylesheet">
+
+  <style type="text/css">
+    
+      .site-footer{
+      position: relative;
+      width: 100%;
+      /*top: 634px;*/
+      bottom: 0;
+    }
+
+  </style>
+
+</head>
+
+<body style="background-color: #eee">
+
+{% block content %}
+
+{% endblock %}
+
+<footer class="site-footer bg-dark">
+    <div class="bottom">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-12 col-xs-12 text-lg-left text-center">
+            <p class="copyright-text text-center">
+              &copy;copyright <a href="/AAEE2021@ECES/dmin/" style="color: white; margin-right: 15px;"> AAEE_2021 <i class="fa fa-lock"></i></a> | <small style="margin-left: 15px;">by <a href="https://api.whatsapp.com/send?phone=+242067027492" style="color: white;">NED & Roméo</a></small>
+            </p>
+            <div class="credits">
+            </div>
+  <!-- Required JavaScript Libraries -->
+  <script src="{% static '' %}lib/jquery/jquery.min.js"></script>
+  <script src="{% static '' %}lib/jquery/jquery-migrate.min.js"></script>
+  <script src="{% static '' %}lib/superfish/hoverIntent.js"></script>
+  <script src="{% static '' %}lib/superfish/superfish.min.js"></script>
+  <script src="{% static '' %}lib/tether/js/tether.min.js"></script>
+  <script src="{% static '' %}lib/stellar/stellar.min.js"></script>
+  <script src="{% static '' %}lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static '' %}lib/counterup/counterup.min.js"></script>
+  <script src="{% static '' %}lib/waypoints/waypoints.min.js"></script>
+  <script src="{% static '' %}lib/easing/easing.js"></script>
+  <script src="{% static '' %}lib/stickyjs/sticky.js"></script>
+  <script src="{% static '' %}lib/parallax/parallax.js"></script>
+  <script src="{% static '' %}lib/lockfixed/lockfixed.min.js"></script>
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="{% static '' %}js/custom.js"></script>
+
+  <script src="{% static '' %}js/ned.js"></script>
+
+  <script type="text/javascript">
+    var typed = new Typed('.ned', {
+      strings: ["","Association", "des Anciens", "Etudiants", "de l'ECES."],
+      typeSpeed: 100,
+      backSpeed: 50,
+      loop: true,
+
+    });
+  </script>
+
+    <script type="text/javascript">
+    var typed = new Typed('.an', {
+      strings: ["","Continuez à préparer", "vos diplômes", "via le programme", "VAE de l'ECES.","Début du programme", "Le <strong style='color: #199EB8; background-color: white; padding: 5px 10px; border-radius: 8px;'>8 Mai 2021</strong>"],
+      typeSpeed: 100,
+      backSpeed: 50,
+      loop: true,
+
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+  {% include 'Base/header.html' %}
+
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-primary" role="alert" style="margin: 0;">
+  {{ message }}
+  </div>
+  {% endfor %}
+  {% endif %}
+
+    <section class="hero">
+        <div class="container text-center">
+        <div class="row">
+
+        <div class="col-md-6">
+            <h1>
+               <span class="ned"></span>
+            </h1>
+
+            <p class="tagline">
+
+            </p>
+            <!-- <a class="btn btn-full" href="{% url 'profil_etudiant' %}"><i class="fa fa-lock"></i> Portail Etudiant</a> -->
+        </div>
+
+        <div class="col-md-3 mt-5">
+          <a href="{% url 'register' %}" class="btn-primary" style="width: 100%; padding: 20px; margin-top: 50px; border-radius: 5px; background-color: #199EB8;"><strong>Inscription/ AAEE</strong></a>
+        </div>
+
+        <div class="col-md-3 mt-5">
+          <a href="{% url 'profil_etudiant' %}" class="btn-primary" style="width: 100%; padding: 20px; margin-top: 50px; border-radius: 5px; background-color: #199EB8;"><strong>Connexion/ AAEE</strong></a>
+        </div>
+
+
+        </div>
+
+
+        </div>
+    </section>
+
+
+
+
+      <section class="about" id="about">
+        <div class="container text-justify">
+          <h2 align="center">
+              A PROPOS /AAEE
+            </h2>
+
+            <div class="row">
+                <div class="col-md-6" style="margin-top: 15px;">
+                    <img src="{% static '' %}img/AAEE.jpg" alt="" style="width: 100%;">
+                </div>
+
+                <div class="col-md-6" style="margin-top: 15px;">
+                    <p>
+                      L’Association des Anciens Etudiants de l’ECES (AAEE), est un recoupement associatif qui met ensemble les anciens étudiants de l’Ecole Communautaire de l’Enseignement Supérieur (ECES), depuis sa création en 2001 jusqu’à ce jour. Dans un souci d’unité, de collégialité et de cohérence, mais aussi d’esprit d’équipe, d’échanges et de complémentarité, l’AAEE voudrait mener des réflexions pour des actions qui visent à partager des informations utiles entre ses membres, aider les étudiants encore à l’école et accompagner l’écoles dans ses projets de développement de l’école.
+                    </p>
+
+                    <p>
+                        L’Ecole Communautaire de l’Enseignement Supérieur (ECES) est née en 2001, de la volonté de l’ONG CACSUP (Centre Africain de Complémentarité Scolaire, Universitaire et de Promotion)... <a href="{% url 'about' %}">Lire la suite</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+      </section>
+
+
+
+      <div class="block bg-primary block-pd-lg block-bg-overlay text-center" data-bg-img="{% static '' %}img/eces_arr.jpg" data-settings='{"stellar-background-ratio": 0.6}' data-toggle="parallax-bg" style="height: 280px; padding: 0;">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+     </div>
+
+     <section class="portfolio pb-5" id="portfolio">
+        <div class="container">
+          <h2 class="text-center">
+              Actualités récentes
+            </h2>
+            <hr>
+
+          <div class="row">
+
+            {% for element in recen %}
+              <div class="col-md-4 mt-3 mb-3" style="border: 1px solid transparent; padding-top: 0; padding-bottom: 5px; padding-left:">
+
+                <div>
+                    <img src="{{element.images.url}}" alt="..." style="width: 100%; overflow: hidden;background-size: cover;background-repeat: no-repeat;background-position: center center;height: 200px;position: relative;display: block; margin: 0;">
+                    <div>
+
+                      <h5 style="margin-top: 5px;"><a href="{% url 'detail_actualite' element.id %}" style="text-decoration: none; color: black;">{{element.titre}}</a></h5>
+                      <hr>
+                      <p align="justify" class="mb-3">{{element.description|truncatewords:14|safe}}</p>
+                      <hr>
+                      <a href="{% url 'detail_actualite' element.id %}" class="btn-primary" style="padding: 10px; border-radius: 5px; background-color: #199EB8;">Voir plus</a>
+                      <small style="color: #000; margin: 1px;"> {{element.date_pub}}</small>
+                    </div>
+                </div>
+              </div>
+            {% endfor %}
+
+          </div>
+
+          <div class="row mt-1">
+          <div class="col-md-12 text-right">
+            <hr>
+            <a href="{% url 'post_actualite' %}" class="btn-dark p-2" style="border-radius: 5px;">Plus d'actualités</a>
+            <hr>
+          </div>
+        </div>
+        </div>
+
+        <hr>
+
+      </section>
+
+
+     <div class="container-fluid">
+       <div class="row">
+
+         <div class="col-md-12">
+           <a href="{% for x in urlvideo %}{{x.urlvideo}}{% empty %}https://www.youtube.com/watch?v=cxnLymI410c{% endfor %}" target="_blank"><video src="https://youtu.be/cxnLymI410c" poster="{% static '' %}img/cordo.png" style="width: 100%; margin: 0;"></video></a>
+         </div>
+       </div>
+     </div>
+
+
+
+     <div class="container mt-5 pb-5">
+        <div class="row" align="center">
+
+          <div class="col-md-3 bg-light p-2 img-thumbnail">
+            <img src="{% static '' %}img/ar.png" style="width: 100px; border: #1ce;">
+          </div>
+
+          <div class="col-md-3 bg-light p-2 img-thumbnail">
+            <img src="{% static '' %}img/congo-1.gif" style="width: 100px; ">
+          </div>
+
+          <div class="col-md-3 bg-light p-2 img-thumbnail">
+            <img src="{% static '' %}img/ISOC.jpg" style="width: 100px; margin-top: 20px;">
+          </div>
+
+          <div class="col-md-3 bg-light p-2 img-thumbnail">
+            <img src="{% static '' %}img/tasa.jpg" style="width: 100px; margin-top: 25px">
+          </div>
+
+        </div>
+      </div>
+
+
+      <section class="portfolio" id="portfolio">
+        <div class="container text-center">
+          <h2>
+              Galerie
+            </h2>
+
+          <p>
+            Cliquez sur une categorie pour voir plus d'image.
+          </p>
+        </div>
+
+        <div class="portfolio-grid" id="album">
+          <div class="row">
+
+            {% for cat in cle_cat %}
+            <div class="col-lg-3 col-sm-6 col-xs-12">
+              <div class="card card-block">
+                <a href="{% url 'album_by_categorie' cat.nom %}"><img alt="" src="{{cat.images.url}}" style="width: 100%; overflow: hidden;background-size: cover;background-repeat: no-repeat;background-position: center center;height: 180px; position: relative;display: block;">
+                  <div class="portfolio-over">
+                    <div>
+                      <h3 class="card-title">
+                        {{cat.nom}}
+                      </h3>
+
+                      <p class="card-text">
+                        Cliquez pour voir  plus de photos
+                      </p>
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+
+
+        </div>
+      </section>
+
+{% endblock %}
