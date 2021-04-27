@@ -30,7 +30,6 @@
         <div class="col-md-12">
           <div class="form">
 
-
             <form method="POST" role="form" enctype="multipart/form-data">
             	{% csrf_token %}
 
@@ -56,7 +55,7 @@
               </div>
 
               <div class="form-group">
-                <select name="promotion" required>
+                <select name="promotion" required class="promotion">
                 	<option style="color: rgba(0,0,0,0.2);">Votre promotion</option>
                 	
 			    	<option value="2003">Promotion - 2003</option>
@@ -84,7 +83,7 @@
 
 
               <div class="form-group">
-                <select name="option" required id="id_option" required>
+                <select name="option" required class="option" required>
                   <option style="color: rgba(0,0,0,0.2);">Option</option>
 
 				  <option value="Langues et Affaires">Langues et Affaires</option>
@@ -125,7 +124,7 @@
 
 
 			<div class="form-group">
-                <select name="pays_residence" id="id_pays_residence" required>
+                <select name="pays_residence" class="pays" required>
                   <option value="" style="color: rgba(0,0,0,0.2);">Pays de residence</option>
                   <option value="AF">Afghanistan</option>
 

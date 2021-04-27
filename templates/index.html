@@ -30,11 +30,26 @@
         </div>
 
         <div class="col-md-3 mt-5">
-          <a href="{% url 'register' %}" class="btn-primary" style="width: 100%; padding: 20px; margin-top: 50px; border-radius: 5px; background-color: #199EB8;"><strong>Inscription/ AAEE</strong></a>
+
+          {% if user.is_authenticated %}
+
+            <a href="{% url 'profil_etudiant' %}" class="btn-primary" style="width: 100%; padding: 20px; margin-top: 50px; border-radius: 5px; background-color: #199EB8;"><strong>Mon Compte <i class="fa fa-user-circle" style="font-size: 25px; margin-top: 5px;"></i></strong></a>
+
+          {% else %}
+              <a href="{% url 'register' %}" class="btn-primary" style="width: 100%; padding: 20px; margin-top: 50px; border-radius: 5px; background-color: #199EB8;"><strong>Inscription/ AAEE</strong></a>
+          {% endif %}
+
         </div>
 
         <div class="col-md-3 mt-5">
+
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="btn-dark" style="width: 100%; padding-left: 22px; padding-right: 22px; padding-top: 20px; padding-bottom: 20px; margin-top: 50px; border-radius: 5px;"><strong>Deconnexion  <i class="fa fa-sign-out" style="font-size: 25px; margin-top: 5px; color: white;"></i></strong></a>
+
+        {% else %}
+
           <a href="{% url 'profil_etudiant' %}" class="btn-primary" style="width: 100%; padding: 20px; margin-top: 50px; border-radius: 5px; background-color: #199EB8;"><strong>Connexion/ AAEE</strong></a>
+        {% endif %}
         </div>
 
 

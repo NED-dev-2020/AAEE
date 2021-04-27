@@ -16,7 +16,10 @@
 
           <li><a href="{% url 'vae' %}">VAE</a></li>
 
-          <li><a href="{% url 'register' %}">INSCRIPTION</a></li>
+          {% if user.is_authenticated %}
+          {% else %}
+            <li><a href="{% url 'register' %}">INSCRIPTION</a></li>
+          {% endif %}
 
           <li><a href="{% url 'liens' %}">LIENS</a></li>
 
