@@ -183,9 +183,13 @@
               Galerie
             </h2>
 
+            {% if cle_cat %}
           <p>
             Cliquez sur une categorie pour voir plus d'image.
           </p>
+          {% else %}
+            <p>Oups! Pas de photo pour l'instant</p>
+          {% endif %}
         </div>
 
         <div class="portfolio-grid" id="album">
