@@ -2,5 +2,6 @@
 
 mailsend = [
 	'exaucengango2@gmail.com',
-	'nedchaine2000@gmail.com'
+	'nedchaine2000@gmail.com',
+	'kissangou@gmail.com',
 ]

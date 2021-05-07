@@ -106,9 +106,17 @@ def register(request):
 
                             send_mail(
                                 "Inscription d'un membre | AAEE ",
-                                'Membre inscrit au nom de '+username+', son addresse mail est: '+email,
+                                "Membre inscrit sur le nom d'utilisateur de "+username+', son addresse mail est '+email,
                                 email,
                                 mailsend,
+                                )
+
+
+                            send_mail(
+                                "Bienvenue dans l'AAEE (l'Association des anciens etudiants de l'ECES)",
+                                'Connectez-vous et completez votre profil afin de profiter de votre compte AAEE!',
+                                email,
+                                [email],
                                 )
 
                             messages.success(request, "Compte crée avec succes! connectez-vous pour completer votre profil")
