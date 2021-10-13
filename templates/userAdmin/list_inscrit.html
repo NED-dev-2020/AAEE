@@ -1,0 +1,64 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block title %}user - admin{% endblock %}
+
+{% block content %}
+	{% include 'Base/header.html' %}
+
+	<div class="container-fluid" style="padding: 5%; background-image: url({% static '' %}img/eces_arr22.jpg); background-size: 100% auto; color: white;">
+    	<h2 align="center" style="color: #fff;">Étudiants inscrits ({{etudiant.all|length}})</h2>
+	</div>
+
+	<section class="ftco-section">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-responsive-xl">
+						  <thead>
+						    <tr>
+						      <th>Profil</th>
+						      <th>Téléphone</th>
+						      <th>Email</th>
+						      <th>Societe</th>
+						      <th>Secteur</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+
+						  	{% for etudiant in etudiant %}
+						    <tr class="alert" role="alert">
+						    	
+						      <td class="d-flex align-items-center">
+						      	{% if etudiant.profil %}
+						      	<div class="img" style="background-image: url({{etudiant.profil.url}});"></div>
+						      	{% else %}
+						      	<div class="img" style="background-image: url(https://oasys.ch/wp-content/uploads/2019/03/photo-avatar-profil-300x300.png);"></div>
+						      	{% endif %}
+						      	<div class="pl-3 email">
+
+						      		<span>{{etudiant.prenom}} {{etudiant.nom}}</span>
+						      		<span>({{etudiant.option}} / {{etudiant.promotion}})</span>
+						      	</div>
+						      </td>
+
+						      <td class="status"><a href="tel:{{etudiant.tel}}">{{etudiant.tel}}</a></td>
+						      <td class="status"><a href="mailto: {{etudiant.email}}">{{etudiant.email}}</a></td>
+						      <td class="status">{{etudiant.societe}}</td>
+						      <td class="status">{{etudiant.secteur}}</td>
+
+						    </tr>
+						    {% endfor %}
+						    
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	</div></section>
+{% endblock %}

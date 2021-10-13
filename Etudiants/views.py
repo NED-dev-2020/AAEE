@@ -24,6 +24,13 @@ def home(request):
 
 @login_required(login_url='/connexion/login/')
 def profil_etudiant(request):
+    try:
+        if request.user.useradmin.droit != 'super-user':
+            pass
+        else:
+            return HttpResponseRedirect('/')
+    except:
+        return HttpResponseRedirect('/')
 
     pub = Pub.objects.filter().order_by('-id')
     ann = Annonce.objects.filter().order_by('-id')[:9]

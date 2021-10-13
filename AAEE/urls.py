@@ -13,6 +13,7 @@ urlpatterns = [
 
     path('', include('Etudiants.urls')),
     path('service/', include('Service.urls')),
+    path('admin/', include('userAdmin.urls')),
 ]
 
 from django.conf.urls.static import*

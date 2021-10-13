@@ -6,11 +6,18 @@
   <meta charset="utf-8">
   <title>AAEE | {% block title %}{% endblock %}</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="google" name="notranslate">
+  <meta http-equiv="Content-Language" content="fr_FR">
 
   <link href="{% static '' %}img/AAEE.jpg" rel="icon">
 
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
 
+  <link href="{% static '' %}css/style2.css" rel="stylesheet">
   <link href="{% static '' %}lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" />
@@ -47,7 +54,8 @@
 
           <div class="col-lg-12 col-xs-12 text-lg-left text-center">
             <p class="copyright-text text-center">
-              &copy;copyright <a href="/AAEE2021@ECES/dmin/" style="color: white; margin-right: 15px;"> AAEE_2021 <i class="fa fa-lock"></i></a> | <small style="margin-left: 15px;">by <a href="https://api.whatsapp.com/send?phone=+242067027492" style="color: white;">NED & Roméo</a></small>
+              <a href="{% url 'listInscrit' %}">admin <i class="fa fa-lock"></i></a> |  
+              &copy; copyright <a href="/AAEE2021@ECES/dmin/" style="color: white; margin-right: 15px;"> AAEE 2021 </a> - <small style="margin-left: 15px;">Developed by <a href="https://api.whatsapp.com/send?phone=+242067027492" style="color: white;">NED & Roméo {{user.useradmin.droit}}</a></small>
             </p>
             <div class="credits">
             </div>

@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'Service',
     'ckeditor',
 
-    'News_membres'
+    'News_membres',
+
+    #maj apps
+    'userAdmin',
 ]
 
 MIDDLEWARE = [
